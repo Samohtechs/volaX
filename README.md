@@ -46,11 +46,11 @@
   
     >> Enter name of image: /path/to/image
   
-  Pressing enter, it will run imageinfo and bring you to the next prompt to allow you to enter the profile name which you can find in the "Suggested Profile(s)"
+  Pressing enter, it will run _imageinfo_ and bring you to the next prompt to allow you to enter the profile name which you can find in the _"Suggested Profile(s)"_
   
     >> Enter profile name to use: Win7SP1x64
   
-  Now from there another prompt will be given where you only have to enter specific plugins to use with the profile. Above the prompt will be she full path to your image and the profile
+  Now from there another prompt will be given where you only have to enter specific plugins to use with the profile. Above the prompt will be the full path to your image and the profile
   
     (volatility -f /path/to/memoryimage --profile=Win7SP1x64)
     >> Enter plugin $ pstree
@@ -78,7 +78,7 @@
   
   __>> Enter name of image: /path/to/image__
   
-  Pressing enter, it will run windows.info and bring you to the prompt where you can continue providing other plugins for use.
+  Pressing enter will bring you to the prompt where you can continue providing other plugins for use.
   
     (volatility -f /path/to/memoryimage)
     >> Enter plugin $ pstree

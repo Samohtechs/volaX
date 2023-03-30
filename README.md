@@ -20,11 +20,6 @@
     # you can clone or fork this work here www.github.com/samohtechs/volaX                                     #
     ############################################################################################################
 
-  # __REQUIREMENTS__
-  python 3.x <br>
-  volatility (version 2 or 3) <br>
-  volatility must be accessible globally as 'volatility' for volatility 2 and 'volatility3' for volatility 3 or you can add your own path in the file __volpath.py__ as required.
-
   # __USAGE:__
   __help__           _this help_ <br>
   __help__           _volatility help menu_ <br>
@@ -33,10 +28,6 @@
   __shell__          _to enter shell commands mode_ <br>
   
   ### When Running the script
-  run _python3 vola.py__ <br>
-  or 
-  ./vola (this is a bash script that runs python3 vola.py). Then, <br>
-  
   __You will have to select one option from five options given that are__ <br>
   1 - Volatility 2 <br>
   2 - Volatility 3 <br>
@@ -48,26 +39,30 @@
   ## FOR USE WITH VOLATILITY 2:
   After running the script and selecting option 1 (or 3, or 4 and specify your path and version as 2), you will then be asked to enter the image name/ full path <br>
   
-  __>> Enter name of image: /path/to/image__
+    >> Enter name of image: /path/to/image
   
   Pressing enter, it will run imageinfo and bring you to the next prompt to allow you to enter the profile name which you can find in the "Suggested Profile(s)"
   
-  __>> Enter profile name to use: Win7SP1x64__ 
+    >> Enter profile name to use: Win7SP1x64
   
   Now from there another prompt will be given where you only have to enter specific plugins to use with the profile. Above the prompt will be she full path to your image and the profile
   
   _(volatility -f /path/to/memoryimage --profile=Win7SP1x64)_ <br>
-  __>> Enter plugin $ pstree__
+  
+    >> Enter plugin $ pstree
 
   ### To change the profile.
   just enter cp or cprofile like, __>> Enter plugin $ cp__ or __>> Enter plugin $ cprofile__. a prompt to allow you to enter new profile will follow
-  __>>> New Profile % newProfile__
+  
+    >>> New Profile % newProfile
   
   Now you new profile will be reflected.
   
   ### To execute Shell/Terminal commands
   Enter shell in the prompt >> Enter plugin $ shell
-  __>>> Shell command % ifconfig__<br>
+  
+    >>> Shell command % ifconfig <br>
+  
   enter __exit__ to go back to previous prompt.
   
   And that is All!
@@ -81,8 +76,8 @@
   
   Pressing enter, it will run windows.info and bring you to the prompt where you can continue providing other plugins for use.
   
-  _(volatility -f /path/to/memoryimage)_ <br>
-  __>> Enter plugin $ pstree__
+    _(volatility -f /path/to/memoryimage)_ <br>
+    >> Enter plugin $ pstree
   
   And that is All!
   

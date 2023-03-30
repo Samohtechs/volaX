@@ -47,8 +47,7 @@
   
   Now from there another prompt will be given where you only have to enter specific plugins to use with the profile. Above the prompt will be she full path to your image and the profile
   
-  _(volatility -f /path/to/memoryimage --profile=Win7SP1x64)_ <br>
-  
+    (volatility -f /path/to/memoryimage --profile=Win7SP1x64)
     >> Enter plugin $ pstree
 
   ### To change the profile.
@@ -76,7 +75,7 @@
   
   Pressing enter, it will run windows.info and bring you to the prompt where you can continue providing other plugins for use.
   
-    _(volatility -f /path/to/memoryimage)_ <br>
+    (volatility -f /path/to/memoryimage)
     >> Enter plugin $ pstree
   
   And that is All!

@@ -28,7 +28,7 @@
   
   # __USAGE:__
   > - __help__           _this help_ <br>
-  > - __help__           _volatility help menu_ <br>
+  > - __--help__           _volatility help menu_ <br>
   > - __cp, cprofile__   _change profile name (when profile has already been selected)_ <br>
   > - __q, exit, quit__  _exit program_ <br>
   > - __shell__          _to enter shell commands mode_ <br>

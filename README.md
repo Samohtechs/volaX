@@ -67,9 +67,9 @@
   Now you new profile will be reflected.
   
   ### To execute Shell/Terminal commands
-  Enter shell in the prompt >> Enter plugin $ shell
+  Enter shell in the prompt _>> Enter plugin $ shell_
   
-    >>> Shell command % ifconfig <br>
+    >>> Shell command % ifconfig
   
   enter __exit__ to go back to previous prompt.
   
@@ -80,7 +80,7 @@
   
   > 1. Select option 2 to use volatility 3 (or 3, or 4 and specify your path and version as 2), you will then be asked to enter the image name/ full path <br>
   
-  __>> Enter name of image: /path/to/image__
+    >> Enter name of image: /path/to/image
   
   Pressing enter will bring you to the prompt where you can continue providing other plugins for use.
   

@@ -66,7 +66,7 @@
   
   And that is All!
   
-  # FOR USE WITH VOLATILITY 3
+  ## FOR USE WITH VOLATILITY 3:
   Everything is just the same as in volatility 2 with small difference when you first run the script <br>
   
   1. Select option 2 to use volatility 3 (or 3, or 4 and specify your path and version as 2), you will then be asked to enter the image name/ full path <br>

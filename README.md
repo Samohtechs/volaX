@@ -20,6 +20,11 @@
     # you can clone or fork this work here www.github.com/samohtechs/volaX                                     #
     ############################################################################################################
 
+  # __REQUIREMENTS__
+  python 3.x <br>
+  volatility (version 2 or 3) <br>
+  volatility must be accessible globally as 'volatility' for volatility 2 and 'volatility3' for volatility 3 or you can add your own path in the file __volpath.py__ as required.
+
   # __USAGE:__
   __help__           _this help_ <br>
   __help__           _volatility help menu_ <br>
@@ -28,6 +33,10 @@
   __shell__          _to enter shell commands mode_ <br>
   
   ### When Running the script
+  run _python3 vola.py__ <br>
+  or 
+  ./vola (this is a bash script that runs python3 vola.py). Then, <br>
+  
   __You will have to select one option from five options given that are__ <br>
   1 - Volatility 2 <br>
   2 - Volatility 3 <br>

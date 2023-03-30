@@ -51,15 +51,15 @@
   __>> Enter plugin $ pstree__
 
   ### To change the profile.
-  just enter cp or cprofile like, >> Enter plugin $ cp or >> Enter plugin $ cprofile. a prompt to allow you to enter new profile will follow
+  just enter cp or cprofile like, __>> Enter plugin $ cp__ or __>> Enter plugin $ cprofile__. a prompt to allow you to enter new profile will follow
   __>>> New Profile % newProfile__
   
   Now you new profile will be reflected.
   
   ### To execute Shell/Terminal commands
   Enter shell in the prompt >> Enter plugin $ shell
-  __>>> Shell command % ifconfig__
-  enter exit to go back to previous prompt.
+  __>>> Shell command % ifconfig__<br>
+  enter __exit__ to go back to previous prompt.
   
   And that is All!
   

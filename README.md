@@ -21,10 +21,10 @@
     ############################################################################################################
     
    # __REQUIREMENTS__
-  python 3.x <br>
-  volatility (version 2 or 3) <br>
-  volatility must be accessible globally as 'volatility' for volatility 2 and 'volatility3' for volatility 3 or you can add your own path in the
-  file __volpath.py__ as required.
+  > - python 3.x <br>
+  > - volatility (version 2 or 3) <br>
+  > - volatility must be accessible globally as 'volatility' for volatility 2 and 'volatility3' for volatility 3 or you can add your own path in 
+      the file __volpath.py__ as required.
   
   # __USAGE:__
   > - __help__           _this help_ <br>

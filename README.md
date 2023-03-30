@@ -33,7 +33,11 @@
   > - __q, exit, quit__  _exit program_ <br>
   > - __shell__          _to enter shell commands mode_ <br>
   
-  ### When Running the script
+  ## Running the script:
+  Run python3 vola.py
+  or
+  ./vola (this is a bash script that runs python3 vola.py. Make sure to run chmod +x ./vola to give executable permission.). Then, <br>
+  
   __You will have to select one option from five options given that are__ <br>
   > 1 - Volatility 2 <br>
   > 2 - Volatility 3 <br>

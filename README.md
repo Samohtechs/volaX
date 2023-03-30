@@ -34,8 +34,8 @@
   > - __shell__          _to enter shell commands mode_ <br>
   
   ## Running the script:
-  Run python3 vola.py
-  or
+  Run python3 vola.py <br>
+  or <br>
   ./vola (this is a bash script that runs python3 vola.py. Make sure to run chmod +x ./vola to give executable permission.). Then, <br>
   
   __You will have to select one option from five options given that are__ <br>

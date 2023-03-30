@@ -38,7 +38,7 @@
   > 1 - Volatility 2 <br>
   > 2 - Volatility 3 <br>
   > 3 - To specify your own path and version (be keen with version as it will result to unexpected behaviour when used with wrong volatility) <br>
-  > 4 - To use your own path and version that you have set in the specific variables found in the __volpath.py__ file. So next time you want to use that           simply select 4
+  > 4 - To use your own path and version that you have set in the specific variables found in the __volpath.py__ file. So next time you want to use that           simply select 4. <br>
   > 0 - to exit <br>
   
   ## FOR USE WITH VOLATILITY 2:

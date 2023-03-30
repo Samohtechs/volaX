@@ -3,12 +3,12 @@
 ####################################################################################################################
 # PLEASE NOTE: THIS IS NOT A NEW IMPLEMENTATION OF VOLATILITY. IT SIMPLY USES THE VERSION OF VOLATILITY            #
 # (specifically volatility 2). This simple program aims to simply ease the use of volatility.                      #
-# It saves the imageName of the image all you have to do is focus on other commands to accomplish your task.         #
-# To change imageName use cp or cimageName, a prompt will follow for you to enter another imageName.                     #
+# It saves the imageName of the image all you have to do is focus on other commands to accomplish your task.       #
+# To change imageName use cp or cimageName, a prompt will follow for you to enter another imageName.               #
 ####################################################################################################################
 
 ####################################################################################################################
-# WRITTEN BY: SAMOH MOHAMMED. TWITTER @ghostshado3. GITHUB @samohtechs                                             #
+# WRITTEN BY: SAMOH MOHAMMED. TWITTER @ghostshado3. GITHUB @samohtechs, Website: https://samohtechs.tk             #
 # you can clone or fork this work here www.twitter.com/samohtechs/volaX                                            #
 ####################################################################################################################
 
@@ -18,7 +18,7 @@ def help():
         print("Welcome To Volatility!")
         print("USAGE:")
         print("help           this help")
-        print("cp, cimageName   change imageName name (when imageName has already been selected)")
+        print("cp, cprofile   change profile name (when profile has already been selected)")
         print("q, exit, quit  exit program and return to shell")
         print("shell          to enter shell commands mode")
         print("")
@@ -35,7 +35,7 @@ def volatility(volatility, version="2"):
             elif(imageName == "help"):
                 help()
                 continue
-            elif(imageName == "cp" or imageName == "cimageName"):
+            elif(imageName == "cp" or imageName == "cprofile"):
                 print("INFO: Cannot change profile. No profile has been used yet.")
                 continue
             elif(imageName == "" or imageName == " "):
@@ -47,8 +47,6 @@ def volatility(volatility, version="2"):
                         continue
                     break
                 else:
-                    if(os.system(volatility+" -f "+ imageName + " windows.info") != 0):
-                        continue
                     break
         except FileNotFoundError:
             print("ERROR: File Not Found...")

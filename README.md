@@ -39,9 +39,9 @@
   __./vola__ (this is a bash script that runs python3 vola.py. Make sure to run chmod +x ./vola to give executable permission.). Then, <br>
   
   __You will have to select one option from five options given that are__ <br>
-  > 1 - Volatility 2 <br>
-  > 2 - Volatility 3 <br>
-  > 3 - To specify your own path and version (be keen with version as it will result to unexpected behaviour when used with wrong volatility) <br>
+  > 1 - To specify your own path and version (be keen with version as it will result to unexpected behaviour when used with wrong volatility) <br>
+  > 2 - Volatility 2 <br>
+  > 3 - Volatility 3 <br>
   > 4 - To use your own path and version that you have set in the specific variables found in the __volpath.py__ file. So next time you want to use that           simply select 4. <br>
   > 0 - to exit <br>
   
@@ -49,8 +49,11 @@
   After running the script and selecting option 1 (or 3, or 4 and specify your path and version as 2), you will then be asked to enter the image name/ full path <br>
   
     >> Enter name of image: /path/to/image
+  then
   
-  Pressing enter, it will run _imageinfo_ and bring you to the next prompt to allow you to enter the profile name which you can find in the _"Suggested Profile(s)"_
+    >> Enter profile name (leave blank to run imageinfo):
+  
+  Pressing enter (if no profile specified), it will run _imageinfo_ and bring you to the next prompt to allow you to enter the profile name which you can find in the _"Suggested Profile(s)"_
   
     >> Enter profile name to use: Win7SP1x64
   

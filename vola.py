@@ -5,7 +5,6 @@
 ########################################
 
 from volaX import help
-from version_check import getVersion
 from volaX import volatility
 import history
 
@@ -35,20 +34,15 @@ if __name__ == "__main__":
   ########################################################################################################""")
 
   history.HistoryConsole()
-  getVersion()
   help()
 
-  print("Select volatility version. Must be enabled globally.\n1 - Volatility 2 (Must be accessible as volatility)\n2 - Volatility 3 (Must be accessible as volatility3)\n3 - To specify your own path (If you wish this path to be persistent, open volpath.py and add your path to the path_variable and version to vol_version veriable. and next time enter 4.)\n4 - To use your own path as specified in path_variable in volpath.py\n0 - Exit")
+  print("Select volatility version. Must be enabled globally.\n1 - To specify your own path (If you wish this path to be persistent, open volpath.py and add your path to the path_variable and version to vol_version veriable. and next time enter 1.)\n2 - Volatility 2 (Must be accessible as volatility)\n3 - Volatility 3 (Must be accessible as volatility3).\n4 - To use your own path as specified in path_variable in volpath.py\n0 - Exit")
   response = str(input("Volatility:> "))
   while(True):
     try:
       if(response == "0"):
         break
       elif(response == "1"):
-        volatility("volatility")
-      elif(response == "2"):
-        volatility("volatility3", "3")
-      elif(response == "3"):
         from os import path
         try:
           mypath = str(input("Enter full path: "))
@@ -56,11 +50,15 @@ if __name__ == "__main__":
           if(mypath == "" or mypath == " " or myversion == "" or myversion == " "):
             print("Path and/or Version cannot be blank")
           else:
-            volatility(mypath, str(myversion))
+            volatility(mypath, str(myversion), mypath)
         except ValueError:
           print("version should be of type integer")
         except:
           exit()
+      elif(response == "2"):
+        volatility("volatility")
+      elif(response == "3"):
+        volatility("volatility3", "3")
       elif(response == "4"):
         import volpath
         try:
@@ -70,11 +68,14 @@ if __name__ == "__main__":
             print("Path and/or Version cannot be blank. Please set required variables in volpath.py")
             break
           else:
-            volatility(mypath, str(myversion))
+            volatility(mypath, str(myversion), mypath)
         except ValueError:
           print("version should be of type integer")
         except:
           exit()
+      else:
+        print("ERROR: You did not select from specified options.")
+        break
     except:
       exit()
   exit()

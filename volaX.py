@@ -12,26 +12,27 @@
 # you can clone or fork this work here www.twitter.com/samohtechs/volaX                                            #
 ####################################################################################################################
 
-import os
+import subprocess as sub
+import shlex
 
 def help():
-        print("Welcome To Volatility!")
-        print("USAGE:")
-        print("help           this help")
-        print("cp, cprofile   change profile name (when profile has already been selected)")
-        print("q, exit, quit  exit program and return to shell")
-        print("shell          to enter shell commands mode")
-        print("")
+	print("Welcome To Volatility!")
+	print("USAGE:")
+	print("help           this help")
+	print("--help 		  volatility help menu")
+	print("cp, cprofile   change profile name (when profile has already been selected)")
+	print("q, exit, quit  exit program and return to shell")
+	print("shell          to enter shell commands mode")
+	print("")
 
-def volatility(volatility, version="2"):
+def volatility(volatility, version="2", path=None):
     while(True):
+        ## Read image or Image Name...
+        imageName = input(">> Enter name of image: ")
         try:
-            ## Read image or Image Name...
-            imageName = input(">> Enter name of image: ")
-
             if(imageName == "q" or imageName == "exit" or imageName == "quit"):
                 print("Goodbye...")
-                exit()
+                break
             elif(imageName == "help"):
                 help()
                 continue
@@ -42,9 +43,24 @@ def volatility(volatility, version="2"):
                 print("ALERT: File name not supplied...")
                 continue
             else:
+                # Check volatility version
                 if(version == "2"):
-                    if(os.system(volatility+" -f " + imageName + " imageinfo") != 0):
-                        continue
+                    profile_name = input(">> Enter profile name (leave blank to run imageinfo): ")
+
+                    if(profile_name == "" or profile_name == " "):
+                        try:
+                            # Execute the commands using subprocess
+                            if(sub.run([volatility, "-f", imageName, "imageinfo"], shell=False)):
+                                pass
+                            # Allow user to provide profile name here
+                            profile_name = input("\n>> Enter profile name to use: ")
+                        except sub.CalledProcessError as e:
+                            print("ERROR: Command execution error")
+                    else:
+                        pass
+                    break
+                elif(version == "3"):
+                    profile_name = "P:None"
                     break
                 else:
                     break
@@ -53,26 +69,28 @@ def volatility(volatility, version="2"):
             continue
         except KeyboardInterrupt:
             print("KeyboardInterrupt: To exit type q, exit or quit")
+        except sub.CalledProcessError as e:
+            print("ERROR: command execution error: ", e)
             continue
-    
-    # Check if version is volatility3 and set None to profile name
-    if(version == "3"):
-        profile_name = "P:None"
-    else:
-        ## profile name to be used...
-        profile_name = input("\n>> Enter profile name to use: ")
+        except:
+            print("Unexpected error occoured")
 
     while(True):
         try:
             if(profile_name == "" or profile_name == " "):
                 print("ALERT: Please provide a profile name...")
-                profile_name = input(">> Enter profile name to use: ")
+                profile_name = input("\n>> Enter profile name to use: ")
                 continue
             else:
-                if(version == "3"):
-                    print("\n(volatility -f "+imageName+")")
+                if(path == None):
+                    print("")
                 else:
-                    print("\n(volatility -f "+imageName+" --profile="+profile_name+")")
+                    print("\n(PATH: "+volatility+")")
+
+                if(version == "3"):
+                    print("(volatility -f "+imageName+")")
+                else:
+                    print("(volatility -f "+imageName+" --profile="+profile_name+")")
 
                 user_command = input(">> Enter plugin $ ")
 
@@ -85,6 +103,9 @@ def volatility(volatility, version="2"):
                 elif(user_command == "cp" or user_command == "cprofile"):
                     if(version != "3"):
                         profile_name = input(">>> New profile # ")
+                        if(profile_name == "" or profile_name == " "):
+                            print("Profile cannot be empty")
+                            continue
                         print("INFO:    profile changed to "+profile_name)
                     else:
                         print("INFO: Command not available in volatility 3.")
@@ -96,8 +117,14 @@ def volatility(volatility, version="2"):
                             if(shellcmd == "q" or shellcmd == "quit" or shellcmd == "exit"):
                                 break
                             else:
-                                os.system(shellcmd)
-                                continue
+                                try:
+                                    sanitized_cmd = sub.list2cmdline(shlex.split(shellcmd))
+                                    sub.run(sanitized_cmd, shell=True)
+                                    continue
+                                except sub.CalledProcessError as e:
+                                    print("ERROR: command execution error. " + e)
+                                except:
+                                    print("Error: Unexpected error occured.")
                         except KeyboardInterrupt:
                             print("User Interupted...")
                             continue
@@ -106,14 +133,18 @@ def volatility(volatility, version="2"):
                     print("You must specify something to do (try -h)")
                     continue
                 else:
-                    if(version == "3"):
-                        if(os.system(volatility+" -f "+imageName+" "+user_command) != 0):
-                            pass
-                        continue
-                    else:
-                        if(os.system(volatility+" -f " +imageName+" --profile=" +profile_name+" "+user_command) != 0):
-                            pass
-                        continue
+                    try:
+                        if(version == "3"):
+                            sub.run([volatility, "-f", imageName, user_command], shell=False)
+                            continue
+                        else:
+                            if(sub.run([volatility, "-f", imageName, "--profile=" + profile_name, user_command], shell=False)):
+                                pass
+                            continue
+                    except sub.CalledProcessError as e:
+                        print("ERROR: command execution error. " + e)
+                    except:
+                        print("Error: Unexpected error occured.")
         except KeyboardInterrupt:
             print("KeyboardInterrupt: To exit type q, exit or quit")
             continue

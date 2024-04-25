@@ -16,7 +16,8 @@
     ############################################################################################################
 
     ############################################################################################################
-    # WRITTEN BY: SAMOH MOHAMMED. TWITTER @ghostshado3. GITHUB @samohtechs. Website: https://samohtechs.tk     #
+    # WRITTEN BY: SAMOH MOHAMMED. TWITTER @_cyb3rwolf. GITHUB @samohtechs.                                     #
+    # LINKEDIN: https://www.linkedin.com/in/samoh-mohammed/ PORTFOLIO: https://samohtechs.com                  #
     # you can clone or fork this work here www.github.com/samohtechs/volaX                                     #
     ############################################################################################################
     
